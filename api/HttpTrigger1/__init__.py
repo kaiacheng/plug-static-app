@@ -19,15 +19,16 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     plugdata = []
 	
     try:
-        req_body_bytes =  req.get_body()
-        logging.info(f"Request Bytes: {req_body_bytes}")
-        req_body = req_body_bytes.decode("utf-8")
-        logging.info(f"Request: {req_body}")
-        my_json = json.loads(req_body)
-        turkeyS = my_json['name']
+        #payload = json.loads(req.get_body().decode('utf-8'))
+        #req_body_bytes =  req.get_body()
+        #logging.info(f"Request Bytes: {req_body_bytes}")
+        #req_body = req_body_bytes.decode("utf-8")
+        #logging.info(f"Request: {req_body}")
+        #my_json = json.loads(req_body)
+        turkeyS = 'name'
         logging.info(turkeyS)
-        turkeyS1 = my_json['plug']
-        #turkeyS1 = '565-50-0015-30'
+        #turkeyS1 = payload['plug']
+        turkeyS1 = '565-50-0015-30'
         logging.info(turkeyS1)		
     except:
         messages.append('Use the query string "turkey" to send a turkey .')
